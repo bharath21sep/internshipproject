@@ -1,37 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="1" total="5" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="37431" started-at="2022-03-14T07:41:00Z" finished-at="2022-03-14T07:41:38Z">
+  <suite name="Default suite" duration-ms="29674" started-at="2022-03-15T08:07:19Z" finished-at="2022-03-15T08:07:49Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="37431" started-at="2022-03-14T07:41:00Z" finished-at="2022-03-14T07:41:38Z">
+    <test name="Default test" duration-ms="29674" started-at="2022-03-15T08:07:19Z" finished-at="2022-03-15T08:07:49Z">
       <class name="org.testing.JingleBidLogin">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:org.testing.JingleBidLogin@20398b7c]" name="launchBrowser" is-config="true" duration-ms="33318" started-at="2022-03-14T07:41:00Z" finished-at="2022-03-14T07:41:34Z">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:org.testing.JingleBidLogin@3632be31]" name="launchBrowser" is-config="true" duration-ms="15690" started-at="2022-03-15T08:07:19Z" finished-at="2022-03-15T08:07:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="startTime()[pri:0, instance:org.testing.JingleBidLogin@20398b7c]" name="startTime" is-config="true" duration-ms="1" started-at="2022-03-14T07:41:34Z" finished-at="2022-03-14T07:41:34Z">
+        <test-method status="PASS" signature="startTime()[pri:0, instance:org.testing.JingleBidLogin@3632be31]" name="startTime" is-config="true" duration-ms="1" started-at="2022-03-15T08:07:35Z" finished-at="2022-03-15T08:07:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTime -->
-        <test-method status="PASS" signature="EnterValidUsernameAndValidPassword()[pri:0, instance:org.testing.JingleBidLogin@20398b7c]" name="EnterValidUsernameAndValidPassword" duration-ms="2414" started-at="2022-03-14T07:41:34Z" finished-at="2022-03-14T07:41:36Z">
+        <test-method status="PASS" signature="EnterValidUsernameAndValidPassword()[pri:0, instance:org.testing.JingleBidLogin@3632be31]" name="EnterValidUsernameAndValidPassword" duration-ms="1763" started-at="2022-03-15T08:07:35Z" finished-at="2022-03-15T08:07:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterValidUsernameAndValidPassword -->
-        <test-method status="PASS" signature="endTime()[pri:0, instance:org.testing.JingleBidLogin@20398b7c]" name="endTime" is-config="true" duration-ms="0" started-at="2022-03-14T07:41:36Z" finished-at="2022-03-14T07:41:36Z">
+        <test-method status="PASS" signature="endTime()[pri:0, instance:org.testing.JingleBidLogin@3632be31]" name="endTime" is-config="true" duration-ms="0" started-at="2022-03-15T08:07:36Z" finished-at="2022-03-15T08:07:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTime -->
-        <test-method status="PASS" signature="startTime()[pri:0, instance:org.testing.JingleBidLogin@20398b7c]" name="startTime" is-config="true" duration-ms="0" started-at="2022-03-14T07:41:36Z" finished-at="2022-03-14T07:41:36Z">
+        <test-method status="PASS" signature="startTime()[pri:0, instance:org.testing.JingleBidLogin@3632be31]" name="startTime" is-config="true" duration-ms="0" started-at="2022-03-15T08:07:36Z" finished-at="2022-03-15T08:07:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTime -->
-        <test-method status="PASS" signature="ValidateLogin()[pri:0, instance:org.testing.JingleBidLogin@20398b7c]" name="ValidateLogin" duration-ms="1683" started-at="2022-03-14T07:41:36Z" finished-at="2022-03-14T07:41:38Z">
+        <test-method status="PASS" signature="ValidateLogin()[pri:0, instance:org.testing.JingleBidLogin@3632be31]" name="ValidateLogin" duration-ms="719" started-at="2022-03-15T08:07:36Z" finished-at="2022-03-15T08:07:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateLogin -->
-        <test-method status="PASS" signature="endTime()[pri:0, instance:org.testing.JingleBidLogin@20398b7c]" name="endTime" is-config="true" duration-ms="0" started-at="2022-03-14T07:41:38Z" finished-at="2022-03-14T07:41:38Z">
+        <test-method status="PASS" signature="endTime()[pri:0, instance:org.testing.JingleBidLogin@3632be31]" name="endTime" is-config="true" duration-ms="0" started-at="2022-03-15T08:07:37Z" finished-at="2022-03-15T08:07:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTime -->
+        <test-method status="PASS" signature="searchProduct()[pri:0, instance:org.testing.JingleBidLogin@3632be31]" name="searchProduct" duration-ms="6858" started-at="2022-03-15T08:07:37Z" finished-at="2022-03-15T08:07:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchProduct -->
+        <test-method status="PASS" signature="startTime()[pri:0, instance:org.testing.JingleBidLogin@3632be31]" name="startTime" is-config="true" duration-ms="0" started-at="2022-03-15T08:07:37Z" finished-at="2022-03-15T08:07:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTime -->
+        <test-method status="PASS" signature="endTime()[pri:0, instance:org.testing.JingleBidLogin@3632be31]" name="endTime" is-config="true" duration-ms="1" started-at="2022-03-15T08:07:44Z" finished-at="2022-03-15T08:07:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTime -->
+        <test-method status="PASS" signature="startTime()[pri:0, instance:org.testing.JingleBidLogin@3632be31]" name="startTime" is-config="true" duration-ms="0" started-at="2022-03-15T08:07:44Z" finished-at="2022-03-15T08:07:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTime -->
+        <test-method status="PASS" signature="StartAction()[pri:3, instance:org.testing.JingleBidLogin@3632be31]" name="StartAction" duration-ms="4603" started-at="2022-03-15T08:07:44Z" finished-at="2022-03-15T08:07:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StartAction -->
+        <test-method status="PASS" signature="endTime()[pri:0, instance:org.testing.JingleBidLogin@3632be31]" name="endTime" is-config="true" duration-ms="1" started-at="2022-03-15T08:07:49Z" finished-at="2022-03-15T08:07:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTime -->

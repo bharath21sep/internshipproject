@@ -111,7 +111,7 @@ public class BaseClassMethods {
 
 	public static void moveTo(WebElement e) {
 		Actions a = new Actions(driver);
-		a.moveToElement(e).perform();
+		a.moveToElement(e).build().perform();;
 
 	}
 

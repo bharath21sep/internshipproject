@@ -6,8 +6,8 @@
       <class name="org.testing.JingleBidLogin">
         <methods>
           <include name="launchBrowser"/>
+          <include name="StartAction"/>
           <include name="startTime"/>
-          <include name="ValidateLogin"/>
           <include name="endTime"/>
         </methods>
       </class> <!-- org.testing.JingleBidLogin -->
