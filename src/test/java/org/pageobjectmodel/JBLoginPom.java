@@ -65,9 +65,39 @@ public class  JBLoginPom extends BaseClassMethods {
 	private WebElement confirm;
 	@FindBy(xpath="//span[text()='GO TO HOME']")
 	private WebElement goToHome;
+	@FindBy(xpath="//span[text()='Total Auctions']")
+	private WebElement totalAuction;
+	@FindBy(xpath="(//p[contains(text(),'Samsung Galaxy M32 5G')])[1]")
+	private WebElement trackOrder;
+	@FindBy(xpath="//span[text()='Cancel Auction']")
+	private WebElement cancelAuction;
+	@FindBy(xpath="//span[text()='Changed my mind']")
+	private WebElement reasonForCancel;
+	@FindBy(xpath="//span[text()='Submit']")
+	private WebElement sumbitForCancelAuction;
 	
 	public WebElement getGoToHome() {
 		return goToHome;
+	}
+
+	public WebElement getTotalAuction() {
+		return totalAuction;
+	}
+
+	public WebElement getTrackOrder() {
+		return trackOrder;
+	}
+
+	public WebElement getCancelAuction() {
+		return cancelAuction;
+	}
+
+	public WebElement getReasonForCancel() {
+		return reasonForCancel;
+	}
+
+	public WebElement getSumbitForCancelAuction() {
+		return sumbitForCancelAuction;
 	}
 
 	public WebElement getSelectAddress() {

@@ -27,6 +27,7 @@ public class JingleBidLogin extends JBLoginPom{
 		driver = new ChromeDriver();
 		windMax();
 		loadUrl("https://qa.jinglebid.com/");
+		parentWindow();
 	}
 	@BeforeMethod
 	private void startTime() {
@@ -54,7 +55,7 @@ public class JingleBidLogin extends JBLoginPom{
       Assert.assertEquals(true, text.contains("bharath"));
 		
 	}
-	@Test
+	@Test(enabled=false)
 	public void searchProduct() {
 		JBLoginPom jb = new JBLoginPom();
 		WebDriverWait w = new WebDriverWait(driver, 20);
@@ -96,7 +97,7 @@ public class JingleBidLogin extends JBLoginPom{
 		r.keyRelease(KeyEvent.VK_ENTER);
 		btnclick(jb.getSave());
 	}
-	@Test(priority=3)
+	@Test(priority=3,enabled=false)
   public void StartAction() {
 		JBLoginPom jb = new JBLoginPom();
 		WebDriverWait w = new WebDriverWait(driver, 10);
@@ -104,6 +105,26 @@ public class JingleBidLogin extends JBLoginPom{
     	btnclick(jb.getConfirm());
     	w.until(ExpectedConditions.elementToBeClickable(jb.getGoToHome()));
     	btnclick(jb.getGoToHome());
+	}
+	@Test(priority=4)
+	public void CancelAuction() {
+		JBLoginPom jb = new JBLoginPom();
+		WebDriverWait w = new WebDriverWait(driver, 10);
+		w.until(ExpectedConditions.elementToBeClickable(jb.getTotalAuction()));
+		btnclick(jb.getTotalAuction());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getTrackOrder()));
+		btnclick(jb.getTrackOrder());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getCancelAuction()));
+		btnclick(jb.getCancelAuction());
+		switchWindows();
+    	w.until(ExpectedConditions.elementToBeClickable(jb.getReasonForCancel()));
+		btnclick(jb.getReasonForCancel());
+		btnclick(jb.getSumbitForCancelAuction());
+		
+		
+		
+		
+		
 	}
 	
 	@AfterMethod
