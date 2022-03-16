@@ -154,7 +154,11 @@ public class BaseClassMethods {
 		Alert a = driver.switchTo().alert();
 		a.dismiss();
 	}
-
+	public static void clearText(WebElement e) {
+		e.clear();
+		
+		
+	}
 	public static void alertPass(String txt) {
 		Alert a = driver.switchTo().alert();
 		a.sendKeys(txt);

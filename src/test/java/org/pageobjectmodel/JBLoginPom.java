@@ -75,7 +75,68 @@ public class  JBLoginPom extends BaseClassMethods {
 	private WebElement reasonForCancel;
 	@FindBy(xpath="//span[text()='Submit']")
 	private WebElement sumbitForCancelAuction;
+	@FindBy(xpath="//p[text()='View Profile']")
+	private WebElement updateViewProfile;
+	@FindBy(id="User_Name")
+	private WebElement updateName;
+	@FindBy(id="Email_ID")
+	private WebElement updateEmail;
+	@FindBy(id="Gender")
+	private WebElement updateGender;
+	@FindBy(xpath="(//div[text()='Male'])[2]")
+	private WebElement selectGender;
+	@FindBy(xpath="//span[text()='Change Password']")
+	private WebElement changePassword;
+	@FindBy(id="newPassword")
+	private WebElement newPassword;
+	@FindBy(id="confirmPassword")
+	private WebElement confirmPassword;
+	@FindBy(xpath="(//span[text()='Change Password'])[2]")
+	private WebElement saveChangePassword;
+	@FindBy(xpath="//span[text()=' Save ']")
+	private WebElement updateProfileSave;
 	
+	
+	public WebElement getUpdateViewProfile() {
+		return updateViewProfile;
+	}
+
+	public WebElement getUpdateName() {
+		return updateName;
+	}
+
+	public WebElement getUpdateEmail() {
+		return updateEmail;
+	}
+
+	public WebElement getUpdateGender() {
+		return updateGender;
+	}
+
+	public WebElement getSelectGender() {
+		return selectGender;
+	}
+
+	public WebElement getChangePassword() {
+		return changePassword;
+	}
+
+	public WebElement getNewPassword() {
+		return newPassword;
+	}
+
+	public WebElement getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public WebElement getSaveChangePassword() {
+		return saveChangePassword;
+	}
+
+	public WebElement getUpdateProfileSave() {
+		return updateProfileSave;
+	}
+
 	public WebElement getGoToHome() {
 		return goToHome;
 	}

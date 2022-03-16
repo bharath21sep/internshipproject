@@ -52,7 +52,7 @@ public class JingleBidLogin extends JBLoginPom{
 		w.until(ExpectedConditions.visibilityOf(jb.getValidateLogin()));
 		String text = jb.getValidateLogin().getText();
 		System.out.println(text);
-      Assert.assertEquals(true, text.contains("bharath"));
+      Assert.assertEquals(true, text.contains("Bharath"));
 		
 	}
 	@Test(enabled=false)
@@ -106,7 +106,7 @@ public class JingleBidLogin extends JBLoginPom{
     	w.until(ExpectedConditions.elementToBeClickable(jb.getGoToHome()));
     	btnclick(jb.getGoToHome());
 	}
-	@Test(priority=4)
+	@Test(priority=4,enabled=false)
 	public void CancelAuction() {
 		JBLoginPom jb = new JBLoginPom();
 		WebDriverWait w = new WebDriverWait(driver, 10);
@@ -119,12 +119,32 @@ public class JingleBidLogin extends JBLoginPom{
 		switchWindows();
     	w.until(ExpectedConditions.elementToBeClickable(jb.getReasonForCancel()));
 		btnclick(jb.getReasonForCancel());
-		btnclick(jb.getSumbitForCancelAuction());
+		btnclick(jb.getSumbitForCancelAuction());	
+	}
+	@Test
+	public void UpdatePersonalInformation() {
 		
-		
-		
-		
-		
+		JBLoginPom jb = new JBLoginPom();
+		WebDriverWait w = new WebDriverWait(driver, 10);
+		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
+		btnclick(jb.getUpdateViewProfile());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateName()));
+		btnclick(jb.getUpdateName());
+		clearText(jb.getUpdateName());
+		passValue(jb.getUpdateName(), "M Bharath");
+		jb.getUpdateEmail().clear();
+		passValue(jb.getUpdateEmail(), "bharath4048@gmail.com");
+		btnclick(jb.getUpdateGender());
+		moveTo(jb.getSelectGender());
+		btnclick(jb.getSelectGender());
+		btnclick(jb.getChangePassword());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getNewPassword()));
+		passValue(jb.getNewPassword(), "Bharath@123");
+	    passValue(jb.getConfirmPassword(), "Bharath@123");
+	    btnclick(jb.getSaveChangePassword());
+	    w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateProfileSave()));
+	    btnclick(jb.getUpdateProfileSave());
+	
 	}
 	
 	@AfterMethod
