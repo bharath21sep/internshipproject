@@ -217,12 +217,12 @@ public class JingleBidLogin extends JBLoginPom {
 
 	@Test(priority = 7)
 	public void EditAddress() throws AWTException {
-//		jb = new JBLoginPom();
-//		w = new WebDriverWait(driver, 10);
-//		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
-//		btnclick(jb.getUpdateViewProfile());
-//		w.until(ExpectedConditions.elementToBeClickable(jb.getDeliveryLocation()));
-//		btnclick(jb.getDeliveryLocation());
+		jb = new JBLoginPom();
+		w = new WebDriverWait(driver, 10);
+		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
+		btnclick(jb.getUpdateViewProfile());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getDeliveryLocation()));
+		btnclick(jb.getDeliveryLocation());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getEditAddress()));
 		btnclick(jb.getEditAddress());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getName()));
