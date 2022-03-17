@@ -95,8 +95,54 @@ public class  JBLoginPom extends BaseClassMethods {
 	private WebElement saveChangePassword;
 	@FindBy(xpath="//span[text()=' Save ']")
 	private WebElement updateProfileSave;
+	@FindBy(xpath="//div[text()='Delivery Location']")
+	private WebElement deliveryLocation;
+	@FindBy(xpath="//span[text()='ADD NEW ADDRESS']")
+	private WebElement addNewAddress ;
+	@FindBy(xpath="(//button[@type='submit'])[2]")
+	private WebElement saveNewAddress;
+	@FindBy(xpath="//div[text()='Erode']")
+	private WebElement selectCity;
+	@FindBy(xpath="(//span[text()='Edit'])[3]")
+	private WebElement editAddress;
+	@FindBy(xpath="(//span[text()='Delete'])[3]")
+	private WebElement deleteAddress;
+	@FindBy(xpath="//img[@class='header-logo']")
+	private WebElement jbHomePage;
+	public WebElement getJbHomePage() {
+		return jbHomePage;
+	}
+
+	public WebElement getEditAddress() {
+		return editAddress;
+	}
+
+	public WebElement getDeleteAddress() {
+		return deleteAddress;
+	}
+
+	public WebElement getConfirmDeleteAddress() {
+		return confirmDeleteAddress;
+	}
+	@FindBy(xpath="//span[text()='Yes']")
+	private WebElement confirmDeleteAddress;
 	
-	
+	public WebElement getSelectCity() {
+		return selectCity;
+	}
+
+	public WebElement getDeliveryLocation() {
+		return deliveryLocation;
+	}
+
+	public WebElement getAddNewAddress() {
+		return addNewAddress;
+	}
+
+	public WebElement getSaveNewAddress() {
+		return saveNewAddress;
+	}
+
 	public WebElement getUpdateViewProfile() {
 		return updateViewProfile;
 	}
