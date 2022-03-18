@@ -81,7 +81,7 @@ public class  JBLoginPom extends BaseClassMethods {
 	private WebElement updateName;
 	@FindBy(id="Email_ID")
 	private WebElement updateEmail;
-	@FindBy(id="Gender")
+	@FindBy(xpath="//span[@class='ant-select-arrow']")
 	private WebElement updateGender;
 	@FindBy(xpath="(//div[text()='Male'])[2]")
 	private WebElement selectGender;

@@ -19,11 +19,12 @@ import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import net.bytebuddy.asm.Advice.Enter;
 
-public class JingleBidLogin extends JBLoginPom {
+
+public class JingleBid extends JBLoginPom {
 	JBLoginPom jb;
 	WebDriverWait w;
+	Robot r;
 
 	@BeforeClass
 	private void launchBrowser() {
@@ -88,7 +89,7 @@ public class JingleBidLogin extends JBLoginPom {
 		w.until(ExpectedConditions.elementToBeClickable(jb.getAddAddress()));
 		btnclick(jb.getAddAddress());
 		passValue(jb.getSelectCountry(), "India");
-		Robot r = new Robot();
+		r = new Robot();
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
 		passValue(jb.getName(), "Bharath");
@@ -114,7 +115,7 @@ public class JingleBidLogin extends JBLoginPom {
 	}
 
 	@Test(priority = 3,enabled=false)
-	public void StartAction() {
+	public void StartAuction() {
 		jb = new JBLoginPom();
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getConfirm()));
@@ -129,20 +130,21 @@ public class JingleBidLogin extends JBLoginPom {
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getTotalAuction()));
 		btnclick(jb.getTotalAuction());
-		w.until(ExpectedConditions.elementToBeClickable(jb.getTrackOrder()));
+	 	w.until(ExpectedConditions.elementToBeClickable(jb.getTrackOrder()));
 		btnclick(jb.getTrackOrder());
-//		JavascriptExecutor j = (JavascriptExecutor) driver;
-//		j.executeScript("arguments[0].click()", jb.getTrackOrder());
+	//	JavascriptExecutor j = (JavascriptExecutor) driver;
+	//	j.executeScript("arguments[0].click()", jb.getTrackOrder());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getCancelAuction()));
 		btnclick(jb.getCancelAuction());
 		switchWindows();
 		w.until(ExpectedConditions.elementToBeClickable(jb.getReasonForCancel()));
 		btnclick(jb.getReasonForCancel());
 		btnclick(jb.getSumbitForCancelAuction());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getJbHomePage()));
 		btnclick(jb.getJbHomePage());
 	}
 
-	@Test(priority = 5,enabled=false)
+	@Test(priority = 5,enabled=true)
 	public void UpdatePersonalInformation() throws AWTException {
 
 		jb = new JBLoginPom();
@@ -151,10 +153,11 @@ public class JingleBidLogin extends JBLoginPom {
 		btnclick(jb.getUpdateViewProfile());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateName()));
 		douClick(jb.getUpdateName());
-		Robot r = new Robot();
+		 r = new Robot();
 		r.keyPress(KeyEvent.VK_DELETE);
 		r.keyRelease(KeyEvent.VK_DELETE);
 		passValue(jb.getUpdateName(), "M Bharath");
+		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateEmail()));
 		btnclick(jb.getUpdateEmail());
 		r.keyPress(KeyEvent.VK_CONTROL);
 		r.keyPress(KeyEvent.VK_A);
@@ -163,21 +166,19 @@ public class JingleBidLogin extends JBLoginPom {
 		r.keyPress(KeyEvent.VK_DELETE);
 		r.keyRelease(KeyEvent.VK_DELETE);
 		passValue(jb.getUpdateEmail(), "bharath4048@gmail.com");
-		btnclick(jb.getUpdateGender());
-		moveTo(jb.getSelectGender());
-		btnclick(jb.getSelectGender());
-		btnclick(jb.getChangePassword());
-		w.until(ExpectedConditions.elementToBeClickable(jb.getNewPassword()));
-		passValue(jb.getNewPassword(), "Bharath@123");
-		passValue(jb.getConfirmPassword(), "Bharath@123");
-		btnclick(jb.getSaveChangePassword());
+//		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateGender()));
+//		btnclick(jb.getUpdateGender());
+//		JavascriptExecutor j = (JavascriptExecutor) driver;
+//		j.executeScript("arguments[0].click()", jb.getUpdateGender());
+//		moveTo(jb.getSelectGender());
+//		btnclick(jb.getSelectGender());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateProfileSave()));
 		btnclick(jb.getUpdateProfileSave());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getJbHomePage()));
 		btnclick(jb.getJbHomePage());
-
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6,enabled=false)
 	public void updateDeliveryLocation() throws AWTException, InterruptedException {
 		jb = new JBLoginPom();
 		w = new WebDriverWait(driver, 10);
@@ -215,14 +216,14 @@ public class JingleBidLogin extends JBLoginPom {
 
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 7,enabled=false)
 	public void EditAddress() throws AWTException {
 		jb = new JBLoginPom();
 		w = new WebDriverWait(driver, 10);
-		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
-		btnclick(jb.getUpdateViewProfile());
-		w.until(ExpectedConditions.elementToBeClickable(jb.getDeliveryLocation()));
-		btnclick(jb.getDeliveryLocation());
+//		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
+//		btnclick(jb.getUpdateViewProfile());
+//		w.until(ExpectedConditions.elementToBeClickable(jb.getDeliveryLocation()));
+//		btnclick(jb.getDeliveryLocation());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getEditAddress()));
 		btnclick(jb.getEditAddress());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getName()));
@@ -234,13 +235,34 @@ public class JingleBidLogin extends JBLoginPom {
 		btnclick(jb.getSaveNewAddress());
 
 	}
-	@Test(priority=8)
+	@Test(priority=8,enabled=false)
 	public void DeleteAddress() {
 		jb = new JBLoginPom();
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getDeleteAddress()));
 		btnclick(jb.getDeleteAddress());
 		btnclick(jb.getConfirmDeleteAddress());
+		
+	}
+	@Test(priority=9,enabled=false)
+	public void ChangePassword() {
+		jb = new JBLoginPom();
+		w = new WebDriverWait(driver, 10);
+		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
+		btnclick(jb.getUpdateViewProfile());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getChangePassword()));
+		btnclick(jb.getChangePassword());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getNewPassword()));
+		passValue(jb.getNewPassword(), "Bharath@1234");
+		passValue(jb.getConfirmPassword(), "Bharath@1234");
+		btnclick(jb.getSaveChangePassword());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateProfileSave()));
+		btnclick(jb.getUpdateProfileSave());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getJbHomePage()));
+		btnclick(jb.getJbHomePage());
+		
+		
+		
 		
 	}
 

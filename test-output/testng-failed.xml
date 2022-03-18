@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.testing.JingleBidLogin">
+      <class name="org.testing.JingleBid">
         <methods>
-          <include name="launchBrowser"/>
-          <include name="EditAddress"/>
           <include name="startTime"/>
           <include name="endTime"/>
+          <include name="UpdatePersonalInformation"/>
+          <include name="launchBrowser"/>
         </methods>
-      </class> <!-- org.testing.JingleBidLogin -->
+      </class> <!-- org.testing.JingleBid -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
