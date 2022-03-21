@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.baseclass.BaseClassMethods;
 
-public class  JBLoginPom extends BaseClassMethods {
-	public JBLoginPom() {
+public class  JBPom extends BaseClassMethods {
+	public JBPom() {
 
 		PageFactory.initElements(driver, this);
 		}
@@ -109,6 +109,37 @@ public class  JBLoginPom extends BaseClassMethods {
 	private WebElement deleteAddress;
 	@FindBy(xpath="//img[@class='header-logo']")
 	private WebElement jbHomePage;
+	@FindBy(xpath="//span[@class='anticon anticon-file-text header-icon']")
+	private WebElement productRequest;
+	@FindBy(id="Product_Name")
+	private WebElement productName;
+	@FindBy(id="Reference_Url")
+	private WebElement productUrl;
+	@FindBy(id="Model_Number")
+	private WebElement productModel;
+	@FindBy(xpath="//span[text()='submit']")
+	private WebElement productsubmit;
+	
+	public WebElement getProductRequest() {
+		return productRequest;
+	}
+
+	public WebElement getProductName() {
+		return productName;
+	}
+
+	public WebElement getProductUrl() {
+		return productUrl;
+	}
+
+	public WebElement getProductModel() {
+		return productModel;
+	}
+
+	public WebElement getProductsubmit() {
+		return productsubmit;
+	}
+
 	public WebElement getJbHomePage() {
 		return jbHomePage;
 	}

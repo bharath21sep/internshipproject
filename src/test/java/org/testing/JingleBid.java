@@ -11,7 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.pageobjectmodel.JBLoginPom;
+import org.pageobjectmodel.JBPom;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -21,8 +21,8 @@ import org.testng.asserts.Assertion;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class JingleBid extends JBLoginPom {
-	JBLoginPom jb;
+public class JingleBid extends JBPom {
+	JBPom jb;
 	WebDriverWait w;
 	Robot r;
 
@@ -43,7 +43,7 @@ public class JingleBid extends JBLoginPom {
 
 	@Test
 	public void EnterValidUsernameAndValidPassword() {
-		jb = new JBLoginPom();
+		jb = new JBPom();
 		btnclick(jb.getViewProfile());
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getEmailLogin()));
@@ -55,7 +55,7 @@ public class JingleBid extends JBLoginPom {
 
 	@Test(priority = 0)
 	public void ValidateLogin() {
-		jb = new JBLoginPom();
+		jb = new JBPom();
 		w = new WebDriverWait(driver, 20);
 		w.until(ExpectedConditions.visibilityOf(jb.getValidateLogin()));
 		String text = jb.getValidateLogin().getText();
@@ -66,7 +66,7 @@ public class JingleBid extends JBLoginPom {
 
 	@Test(priority=1,enabled=false)
 	public void searchProduct() {
-		jb = new JBLoginPom();
+		jb = new JBPom();
 		w = new WebDriverWait(driver, 20);
 		w.until(ExpectedConditions.visibilityOf(jb.getAllProducts()));
 		btnclick(jb.getAllProducts());
@@ -84,7 +84,7 @@ public class JingleBid extends JBLoginPom {
 
 	@Test(priority=2,enabled=false)
 	public void addAddress() throws AWTException {
-		jb = new JBLoginPom();
+		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getAddAddress()));
 		btnclick(jb.getAddAddress());
@@ -116,7 +116,7 @@ public class JingleBid extends JBLoginPom {
 
 	@Test(priority = 3,enabled=false)
 	public void StartAuction() {
-		jb = new JBLoginPom();
+		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getConfirm()));
 		btnclick(jb.getConfirm());
@@ -126,7 +126,7 @@ public class JingleBid extends JBLoginPom {
 
 	@Test(priority = 4,enabled=false)
 	public void CancelAuction() {
-		jb = new JBLoginPom();
+		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getTotalAuction()));
 		btnclick(jb.getTotalAuction());
@@ -147,7 +147,7 @@ public class JingleBid extends JBLoginPom {
 	@Test(priority = 5,enabled=true)
 	public void UpdatePersonalInformation() throws AWTException {
 
-		jb = new JBLoginPom();
+		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
 		btnclick(jb.getUpdateViewProfile());
@@ -180,7 +180,7 @@ public class JingleBid extends JBLoginPom {
 
 	@Test(priority = 6,enabled=false)
 	public void updateDeliveryLocation() throws AWTException, InterruptedException {
-		jb = new JBLoginPom();
+		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
 		btnclick(jb.getUpdateViewProfile());
@@ -218,7 +218,7 @@ public class JingleBid extends JBLoginPom {
 
 	@Test(priority = 7,enabled=false)
 	public void EditAddress() throws AWTException {
-		jb = new JBLoginPom();
+		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
 //		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
 //		btnclick(jb.getUpdateViewProfile());
@@ -237,7 +237,7 @@ public class JingleBid extends JBLoginPom {
 	}
 	@Test(priority=8,enabled=false)
 	public void DeleteAddress() {
-		jb = new JBLoginPom();
+		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getDeleteAddress()));
 		btnclick(jb.getDeleteAddress());
@@ -246,7 +246,7 @@ public class JingleBid extends JBLoginPom {
 	}
 	@Test(priority=9,enabled=false)
 	public void ChangePassword() {
-		jb = new JBLoginPom();
+		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
 		btnclick(jb.getUpdateViewProfile());

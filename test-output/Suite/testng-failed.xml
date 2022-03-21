@@ -6,14 +6,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="org.testing.JingleBid">
+      <class name="org.testing.ProductRequest">
         <methods>
           <include name="startTime"/>
-          <include name="endTime"/>
-          <include name="UpdatePersonalInformation"/>
           <include name="launchBrowser"/>
+          <include name="ProductRequest"/>
         </methods>
-      </class> <!-- org.testing.JingleBid -->
+      </class> <!-- org.testing.ProductRequest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
