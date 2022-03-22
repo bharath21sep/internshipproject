@@ -55,6 +55,7 @@ public class ProductRequest extends JBPom {
 		passValue(jb.getProductName(), "samsung S22");
 		passValue(jb.getProductUrl(), "https://www.samsung.com/in/smartphones/galaxy-s22");
 		passValue(jb.getProductModel(), "SM-S901EZGDINU");
+		//passValue(jb.getAdditionalNotes(), "");
 		btnclick(jb.getProductsubmit());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getGoToHome()));
 		btnclick(jb.getGoToHome());

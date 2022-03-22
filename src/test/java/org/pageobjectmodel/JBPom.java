@@ -119,7 +119,15 @@ public class  JBPom extends BaseClassMethods {
 	private WebElement productModel;
 	@FindBy(xpath="//span[text()='submit']")
 	private WebElement productsubmit;
+	@FindBy(xpath="//span[text()='Yes']")
+	private WebElement confirmDeleteAddress;
+	@FindBy(id="Addition_Notes")
+	private WebElement additionalNotes;
 	
+	public WebElement getAdditionalNotes() {
+		return additionalNotes;
+	}
+
 	public WebElement getProductRequest() {
 		return productRequest;
 	}
@@ -155,8 +163,6 @@ public class  JBPom extends BaseClassMethods {
 	public WebElement getConfirmDeleteAddress() {
 		return confirmDeleteAddress;
 	}
-	@FindBy(xpath="//span[text()='Yes']")
-	private WebElement confirmDeleteAddress;
 	
 	public WebElement getSelectCity() {
 		return selectCity;
