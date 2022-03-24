@@ -2,12 +2,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 <listeners>
-<listener class-name="org.testing.FailedAllRerun"></listener>
+<listener class-name="org.extentreport.ExtentReportJB"></listener>
 
 </listeners>
   <test name="Test">
     <classes>
-      <class name="org.testing.ProductRequest"/>
+    <class name="org.testing.JingleBid"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

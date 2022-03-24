@@ -12,14 +12,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.pageobjectmodel.JBPom;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class JingleBid extends JBPom {
 	JBPom jb;
@@ -51,6 +56,7 @@ public class JingleBid extends JBPom {
 		passValue(jb.getUsername(), "bharath4048@gmail.com");
 		passValue(jb.getPassword(), "Bharath@123");
 		btnclick(jb.getSignin());
+
 	}
 
 	@Test(priority = 0)
@@ -60,18 +66,15 @@ public class JingleBid extends JBPom {
 		w.until(ExpectedConditions.visibilityOf(jb.getValidateLogin()));
 		String text = jb.getValidateLogin().getText();
 		System.out.println(text);
-		Assert.assertEquals(true, text.contains("bharath"));
-
+		Assert.assertEquals(true, text.contains("Bharath"));
 	}
-
-	@Test(priority=1,enabled=false)
+	@Test(priority = 1, enabled = true)
 	public void searchProduct() {
 		jb = new JBPom();
 		w = new WebDriverWait(driver, 20);
 		w.until(ExpectedConditions.visibilityOf(jb.getAllProducts()));
 		btnclick(jb.getAllProducts());
 		moveTo(jb.getMobilesAndTabs());
-
 		w.until(ExpectedConditions.elementToBeClickable(jb.getMobiles()));
 		moveTo(jb.getMobiles());
 		btnclick(jb.getMobiles());
@@ -79,10 +82,9 @@ public class JingleBid extends JBPom {
 		btnclick(jb.getSelectProduct());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getSelectProductButton()));
 		btnclick(jb.getSelectProductButton());
-
 	}
 
-	@Test(priority=2,enabled=false)
+	@Test(priority = 2, enabled = true)
 	public void addAddress() throws AWTException {
 		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
@@ -112,9 +114,10 @@ public class JingleBid extends JBPom {
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
 		btnclick(jb.getSave());
+
 	}
 
-	@Test(priority = 3,enabled=false)
+	@Test(priority = 3, enabled = true)
 	public void StartAuction() {
 		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
@@ -124,16 +127,16 @@ public class JingleBid extends JBPom {
 		btnclick(jb.getGoToHome());
 	}
 
-	@Test(priority = 4,enabled=false)
+	@Test(priority = 11, enabled = true)
 	public void CancelAuction() {
 		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getTotalAuction()));
 		btnclick(jb.getTotalAuction());
-	 	w.until(ExpectedConditions.elementToBeClickable(jb.getTrackOrder()));
+		w.until(ExpectedConditions.elementToBeClickable(jb.getTrackOrder()));
 		btnclick(jb.getTrackOrder());
-	//	JavascriptExecutor j = (JavascriptExecutor) driver;
-	//	j.executeScript("arguments[0].click()", jb.getTrackOrder());
+		// JavascriptExecutor j = (JavascriptExecutor) driver;
+		// j.executeScript("arguments[0].click()", jb.getTrackOrder());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getCancelAuction()));
 		btnclick(jb.getCancelAuction());
 		switchWindows();
@@ -144,16 +147,15 @@ public class JingleBid extends JBPom {
 		btnclick(jb.getJbHomePage());
 	}
 
-	@Test(priority = 5,enabled=true)
+	@Test(priority = 5, enabled = true)
 	public void UpdatePersonalInformation() throws AWTException {
-
 		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
 		btnclick(jb.getUpdateViewProfile());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateName()));
 		douClick(jb.getUpdateName());
-		 r = new Robot();
+		r = new Robot();
 		r.keyPress(KeyEvent.VK_DELETE);
 		r.keyRelease(KeyEvent.VK_DELETE);
 		passValue(jb.getUpdateName(), "M Bharath");
@@ -166,19 +168,20 @@ public class JingleBid extends JBPom {
 		r.keyPress(KeyEvent.VK_DELETE);
 		r.keyRelease(KeyEvent.VK_DELETE);
 		passValue(jb.getUpdateEmail(), "bharath4048@gmail.com");
-//		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateGender()));
-//		btnclick(jb.getUpdateGender());
-//		JavascriptExecutor j = (JavascriptExecutor) driver;
-//		j.executeScript("arguments[0].click()", jb.getUpdateGender());
-//		moveTo(jb.getSelectGender());
-//		btnclick(jb.getSelectGender());
+		// w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateGender()));
+		// btnclick(jb.getUpdateGender());
+		// JavascriptExecutor j = (JavascriptExecutor) driver;
+		// j.executeScript("arguments[0].click()", jb.getUpdateGender());
+		// moveTo(jb.getSelectGender());
+		// btnclick(jb.getSelectGender());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateProfileSave()));
 		btnclick(jb.getUpdateProfileSave());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getJbHomePage()));
 		btnclick(jb.getJbHomePage());
+
 	}
 
-	@Test(priority = 6,enabled=false)
+	@Test(priority = 6, enabled = true)
 	public void updateDeliveryLocation() throws AWTException, InterruptedException {
 		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
@@ -216,14 +219,14 @@ public class JingleBid extends JBPom {
 
 	}
 
-	@Test(priority = 7,enabled=false)
+	@Test(priority = 7, enabled = true)
 	public void EditAddress() throws AWTException {
 		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
-//		w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
-//		btnclick(jb.getUpdateViewProfile());
-//		w.until(ExpectedConditions.elementToBeClickable(jb.getDeliveryLocation()));
-//		btnclick(jb.getDeliveryLocation());
+		// w.until(ExpectedConditions.elementToBeClickable(jb.getUpdateViewProfile()));
+		// btnclick(jb.getUpdateViewProfile());
+		// w.until(ExpectedConditions.elementToBeClickable(jb.getDeliveryLocation()));
+		// btnclick(jb.getDeliveryLocation());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getEditAddress()));
 		btnclick(jb.getEditAddress());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getName()));
@@ -233,18 +236,21 @@ public class JingleBid extends JBPom {
 		r.keyRelease(KeyEvent.VK_DELETE);
 		passValue(jb.getName(), "vijay");
 		btnclick(jb.getSaveNewAddress());
-
 	}
-	@Test(priority=8,enabled=false)
+
+	@Test(priority = 8, enabled = true)
 	public void DeleteAddress() {
 		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
 		w.until(ExpectedConditions.elementToBeClickable(jb.getDeleteAddress()));
 		btnclick(jb.getDeleteAddress());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getConfirmDeleteAddress()));
 		btnclick(jb.getConfirmDeleteAddress());
-		
+		w.until(ExpectedConditions.elementToBeClickable(jb.getJbHomePage()));
+		btnclick(jb.getJbHomePage());
 	}
-	@Test(priority=9,enabled=false)
+
+	@Test(priority = 9, enabled = true)
 	public void ChangePassword() {
 		jb = new JBPom();
 		w = new WebDriverWait(driver, 10);
@@ -260,10 +266,26 @@ public class JingleBid extends JBPom {
 		btnclick(jb.getUpdateProfileSave());
 		w.until(ExpectedConditions.elementToBeClickable(jb.getJbHomePage()));
 		btnclick(jb.getJbHomePage());
-		
-		
-		
-		
+
+	}
+	@Test(priority = 10, enabled = true)
+	public void ProductRequest1() {
+		jb = new JBPom();
+		w = new WebDriverWait(driver, 10);
+		w.until(ExpectedConditions.visibilityOf(jb.getAllProducts()));
+		btnclick(jb.getAllProducts());
+		driver.navigate().refresh();
+		w.until(ExpectedConditions.elementToBeClickable(jb.getProductRequest()));
+		btnclick(jb.getProductRequest());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getProductName()));
+		passValue(jb.getProductName(), "samsung S22");
+		passValue(jb.getProductUrl(), "https://www.samsung.com/in/smartphones/galaxy-s22");
+		passValue(jb.getProductModel(), "SM-S901EZGDINU");
+		// passValue(jb.getAdditionalNotes(), "");
+		btnclick(jb.getProductsubmit());
+		w.until(ExpectedConditions.elementToBeClickable(jb.getGoToHome()));
+		btnclick(jb.getGoToHome());
+
 	}
 
 	@AfterMethod
@@ -271,4 +293,5 @@ public class JingleBid extends JBPom {
 		Date d = new Date();
 		System.out.println(d);
 	}
+
 }

@@ -30,8 +30,7 @@ public class  JBPom extends BaseClassMethods {
 	private WebElement mobilesAndTabs;
 	@FindBy(xpath="//li[text()='Mobiles']")
 	private WebElement mobiles;
-	
-	@FindBy(xpath="//h6[contains(text(),'Samsung Galaxy M32 5G')]")
+	@FindBy(xpath="//h6[contains(text(),'Samsung Galaxy M32 5G ')]")
 	private WebElement selectProduct;
 	@FindBy(xpath="//span[text()='SELECT PRODUCT']")
 	private WebElement selectProductButton;
@@ -67,7 +66,7 @@ public class  JBPom extends BaseClassMethods {
 	private WebElement goToHome;
 	@FindBy(xpath="//span[text()='Total Auctions']")
 	private WebElement totalAuction;
-	@FindBy(xpath="(//p[contains(text(),'Samsung Galaxy M32 5G')])[1]")
+	@FindBy(xpath="(//span[text()=' Track'])[1]")
 	private WebElement trackOrder;
 	@FindBy(xpath="//span[text()='Cancel Auction']")
 	private WebElement cancelAuction;

@@ -5,8 +5,10 @@
     <classes>
       <class name="org.testing.ProductRequest">
         <methods>
+          <include name="Report"/>
           <include name="startTime"/>
           <include name="launchBrowser"/>
+          <include name="StopReport"/>
           <include name="ProductRequest"/>
         </methods>
       </class> <!-- org.testing.ProductRequest -->
